@@ -1,0 +1,41 @@
+*{
+    padding:0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.table-container{
+    margin: 2rem 2rem 0rem 6rem;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table th{
+    top: 172px;
+    left: 99px;
+    width: 1293px;
+    height: 35px; 
+    background: #383737 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+th p{
+    text-align: left;
+    font: normal normal 600 12px/48px Open Sans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding-left: 0.5rem;
+    opacity: 1;
+}
+
+tr td{
+    top: 207px;
+    left: 99px;
+    width: 1293px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-bottom: 1px solid #EAEDF0;
+    opacity: 1;
+}
