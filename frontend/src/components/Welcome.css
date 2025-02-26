@@ -1,0 +1,53 @@
+.welcome-container{
+    margin: 49px;
+    height: 85vh;
+}
+
+.app-name{
+    width: 400px;
+    height: 200px;
+    text-align: left;
+    font: normal normal 900 70px/100px Avenir;
+    letter-spacing: 0px;
+    color: #5861AE;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.app-desc{
+    width: 335px;
+    height: 27px;
+    text-align: left;
+    font: normal normal normal 20px/26px Avenir;
+    letter-spacing: 0.8px;
+    color: #565657;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.cta{
+    width: 189px;
+    height: 22px;
+    text-align: left;
+    font: normal normal normal 16px/26px Avenir;
+    letter-spacing: 0.64px;
+    color: #565657;
+    text-transform: capitalize;
+    margin-top:74px;
+    opacity: 1;
+}
+
+.register-btn{
+    width: 150px;
+    height: 50px;
+    border: 2px solid #4552C1;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 15px/20px Open Sans;
+    letter-spacing: 0.3px;
+    color: #4552C1;
+    margin-top:17px;
+    opacity: 1;
+}
