@@ -4,8 +4,10 @@
     background: #F8F9FF 0% 0% no-repeat padding-box;
     box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
-    /* margin: auto; */
-    /* padding: 4px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .offer-main-text{
@@ -26,4 +28,101 @@
     letter-spacing: 0.4px;
     color: #3D3D43;
     opacity: 1;
+}
+
+.footer-navigation, .flex-container-socials{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-navigation{
+    margin: 30px 130px 30px 130px;
+    column-gap: 60px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-heading{
+    width: 90px;
+    height: 25px;
+    text-align: center;
+    font: normal normal medium 18px/24px Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.intro-subheading{
+    width: 251px;
+    height: 20px;
+    text-align: left;
+    font: normal normal normal 15px/20px Avenir;
+    letter-spacing: 0.6px;
+    color: #3D3D43;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.flex-item-heading{
+    width: 44px;
+    height: 22px;
+    text-align: center;
+    font: normal normal medium 16px/24px Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+    text-transform: capitalize;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.flex-item{
+    width: 44px;
+    height: 19px;
+    text-align: left;
+    font: normal normal normal 14px/24px Avenir;
+    letter-spacing: 0.14px;
+    color: #182838;
+    text-transform: capitalize;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.flex-item-heading-socials{
+    width: 130px;
+    height: 25px;
+    text-align: left;
+    font: normal normal medium 18px/24px Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.facebook-icon{
+    width: 20px;
+    height: 20px;
+    background: transparent url('../../public/images/facebook.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.instagram-icon{
+    width: 19px;
+    height: 19px;
+    background: transparent url('../../public/images/instagram.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.linkedin-icon{
+    width: 18px;
+    height: 18px;
+    background: transparent url('../../public/images/linkedin.png') 0% 0% no-repeat padding-box;
+    opacity: 0.6;
+}
+
+.flex-container-socials{
+    gap: 10px;
 }

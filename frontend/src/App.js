@@ -9,6 +9,7 @@ import Pricing from './pages/Pricing';
 import Career from './pages/Career';
 import UserProfile from './pages/UserProfile';
 import Home from './pages/Home';
+import Blogs from './pages/Blogs';
 function App() {
   return (
     <>
@@ -23,6 +24,7 @@ function App() {
         <Route path='/pricing' element = {<Pricing />} />
         <Route path='/career' element = {<Career/>} />
         <Route path='/user-profile' element = {<UserProfile/>} />
+        <Route path='/blogs' element = {<Blogs/>}/>
       </Routes>
     </>
   );

@@ -8,7 +8,7 @@ function Footer() {
         <div className='footer-container'>
             <PreFooter/>
             <div className='lower-footer'>
-                <p className='footer-text'>2021 &copy; Laundry</p>
+                <p className='footer-text'>2025 &copy; Laundry</p>
             </div>
         </div>
     </>

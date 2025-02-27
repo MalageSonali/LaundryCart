@@ -1,0 +1,61 @@
+.signup-form-container{
+    height: 85vh;
+    background: #F8F9FF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.signup-text{
+    width: 157px;
+height: 44px;
+text-align: left;
+font: normal normal medium 32px/60px Avenir;
+letter-spacing: 1.28px;
+color: #5861AE;
+text-transform: uppercase;
+opacity: 1;
+}
+
+.input-field-set{
+    margin: 30px 0 30px 0;
+}
+
+input[type="checkbox"]{
+    max-height: 13px;
+    max-width: 13px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.input-field{
+    margin: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #989898;
+}
+
+.terms-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.signup-btn{
+    width: 150px;
+    height: 50px;
+    background: #5861AE 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 15px/20px Open Sans;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-left: 30px;
+}
+
+.btn-field{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
