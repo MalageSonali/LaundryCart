@@ -30,7 +30,7 @@ li{
     left: 20px;
     width: 22px;
     height: 22px;
-    background: transparent url('../img/home-run (1).png') 0% 0% no-repeat padding-box;
+    background: transparent url('../../public/images/home-run\ \(1\).png') 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
@@ -39,7 +39,7 @@ li{
     left: 20px;
     width: 22px;
     height: 22px;
-    background: transparent url('../img/more.png') 0% 0% no-repeat padding-box;
+    background: transparent url('../../public/images/more.png') 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 
@@ -48,7 +48,7 @@ li{
     left: 20px;
     width: 25px;
     height: 18px;
-    background: transparent url('../img/list.png') 0% 0% no-repeat padding-box;
+    background: transparent url('../../public/images/list.png') 0% 0% no-repeat padding-box;
     opacity: 1;
 }
 

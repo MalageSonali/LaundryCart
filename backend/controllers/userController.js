@@ -7,34 +7,34 @@ const registerController = async (req, res) => {
     try {
         const {name, email, phone, state, district, address, pincode, password} = req.body;
         if(!name){
-            return res.send({error:"Name is required"});
+            return res.send({message:"Name is required"});
         }
         if(!email){
-            return res.send({error:"Email is required"});
+            return res.send({message:"Email is required"});
         }
         if(!phone){
-            return res.send({error:"Phone is required"});
+            return res.send({message:"Phone is required"});
         }
         if(!state){
-            return res.send({error:"State is required"});
+            return res.send({message:"State is required"});
         }
         if(!district){
-            return res.send({error:"District is required"});
+            return res.send({message:"District is required"});
         }
         if(!address){
-            return res.send({error:"Address is required"});
+            return res.send({message:"Address is required"});
         }
         if(!pincode){
-            return res.send({error:"Pincode is required"});
+            return res.send({message:"Pincode is required"});
         }
         if(!password){
-            return res.send({error:"Password is required"});
+            return res.send({message:"Password is required"});
         }
 
         const existingUser = await User.findOne({email});
         if(existingUser){
             return res.status(200).send({
-                success: true,
+                success: false,
                 message: "Already register, Please login!"
             })
         }
@@ -61,20 +61,23 @@ const registerController = async (req, res) => {
 
 const loginController = async (req, res) => {
     try{
-        const {email, password} = req.body;
+        const {credential, password} = req.body;
 
-        if(!email || !password){
+        if(!credential || !password){
             return res.status(404).send({
                 success: false,
-                message: "Invalid Email or Password"
+                message: "Invalid Credentials or Password"
             })
         }
 
-        const user = await User.findOne({email});
+        let user = await User.findOne({email: credential});
+        if(!user){
+            user = await User.findOne({phone: credential});
+        }
         if(!user){
             return res.status(404).send({
                 success: false,
-                message: "Email is not registered"
+                message: "User is not registered"
             });
         }
         const match = await comparePassword(password, user.password);

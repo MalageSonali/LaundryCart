@@ -1,6 +1,6 @@
 .offer{
     width: 100%;
-    height: 80px;
+    height: 14vh;
     background: #F8F9FF 0% 0% no-repeat padding-box;
     box-shadow: 0px -3px 6px #0000000B;
     opacity: 1;
@@ -8,23 +8,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 0.4vh solid #5861AE;
 }
 
 .offer-main-text{
-    width: 519px;
-    height: 33px;
     text-align: center;
-    font: normal normal 600 24px/26px Open Sans;
+    font: normal normal 600 1.5rem/1.8rem Open Sans;
     letter-spacing: 0.96px;
     color: #5861AE;
     opacity: 1;
 }
 
 .offer-sub-text{
-    width: 183px;
-    height: 14px;
     text-align: center;
-    font: italic normal normal 10px/26px Open Sans;
+    font: italic normal normal 0.6rem/0.8rem Open Sans;
     letter-spacing: 0.4px;
     color: #3D3D43;
     opacity: 1;
@@ -36,8 +33,10 @@
 }
 
 .footer-navigation{
-    margin: 30px 130px 30px 130px;
-    column-gap: 60px;
+    width: 100%;
+    height: 25.8vh;
+    padding: 4vw;
+    column-gap: 6vw;
 }
 
 .flex-container{
@@ -46,10 +45,8 @@
 }
 
 .intro-heading{
-    width: 90px;
-    height: 25px;
-    text-align: center;
-    font: normal normal medium 18px/24px Avenir;
+    text-align: left;
+    font: normal normal medium 40vw/5vw Avenir;
     letter-spacing: 0.18px;
     color: #182838;
     text-transform: uppercase;
@@ -57,10 +54,8 @@
 }
 
 .intro-subheading{
-    width: 251px;
-    height: 20px;
     text-align: left;
-    font: normal normal normal 15px/20px Avenir;
+    font: normal normal normal 1vw/2vw Avenir;
     letter-spacing: 0.6px;
     color: #3D3D43;
     text-transform: capitalize;
@@ -68,10 +63,8 @@
 }
 
 .flex-item-heading{
-    width: 44px;
-    height: 22px;
     text-align: center;
-    font: normal normal medium 16px/24px Avenir;
+    font: normal normal medium 1rem/1.5rem Avenir;
     letter-spacing: 0.16px;
     color: #182838;
     text-transform: capitalize;
@@ -80,10 +73,8 @@
 }
 
 .flex-item{
-    width: 44px;
-    height: 19px;
     text-align: left;
-    font: normal normal normal 14px/24px Avenir;
+    font: normal normal normal 0.8rem/1.5rem Avenir;
     letter-spacing: 0.14px;
     color: #182838;
     text-transform: capitalize;
@@ -92,10 +83,8 @@
 }
 
 .flex-item-heading-socials{
-    width: 130px;
-    height: 25px;
     text-align: left;
-    font: normal normal medium 18px/24px Avenir;
+    font: normal normal medium 1.13rem/1.5rem Avenir;
     letter-spacing: 0.18px;
     color: #182838;
     text-transform: uppercase;

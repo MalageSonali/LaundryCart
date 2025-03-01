@@ -7,7 +7,7 @@ import CtaRegister from '../components/CtaRegister'
 
 function SignIn() {
   return (
-    <Layout>
+    <Layout title={"Sign In - Laundry Cart"}>
         <SplitScreen leftWidth={1} rightWidth={1}>
             <Welcome>
                 <CtaRegister/>

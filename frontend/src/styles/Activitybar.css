@@ -55,6 +55,6 @@ input{
     left: 1195px;
     width: 14px;
     height: 15px;
-    background: transparent url('../img/search.png') 0% 0% no-repeat padding-box;
+    background: transparent url('../../public/images/search.png') 0% 0% no-repeat padding-box;
     opacity: 1;
 }

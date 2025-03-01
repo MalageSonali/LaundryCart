@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout'
 function Pricing() {
   return (
     <>
-        <Layout>
+        <Layout title={"Pricing - Laundry Cart"}>
             <h1>Pricing</h1>
         </Layout> 
     </>

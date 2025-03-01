@@ -1,12 +1,12 @@
 .welcome-container{
-    margin: 49px;
+   padding: 15vh
 }
 
 .app-name{
-    width: 400px;
-    height: 200px;
+    width: 15vw;
+    height: 30vh;
     text-align: left;
-    font: normal normal 900 70px/100px Avenir;
+    font: normal normal 900 4vw/6vw  Avenir;
     letter-spacing: 0px;
     color: #5861AE;
     text-transform: capitalize;
@@ -14,10 +14,8 @@
 }
 
 .app-desc{
-    width: 335px;
-    height: 27px;
     text-align: left;
-    font: normal normal normal 20px/26px Avenir;
+    font: normal normal normal 1vw/1vw Avenir;
     letter-spacing: 0.8px;
     color: #565657;
     text-transform: capitalize;

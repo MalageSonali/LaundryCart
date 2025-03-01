@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout'
 function UserProfile() {
   return (
     <>
-      <Layout>
+      <Layout title={"User Profile - Laundry Cart"}>
         <h1>User Profile</h1>
       </Layout>
     </>

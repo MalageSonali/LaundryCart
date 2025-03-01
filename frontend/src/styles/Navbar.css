@@ -1,9 +1,11 @@
-li{
-    list-style-type: none;
+*{
+    padding:0;
+    margin: 0;
+    font-size: 16px;
 }
 
-.user, .nav-item{
-    text-decoration: none;
+li{
+    list-style-type: none;
 }
 
 .nav-container{
@@ -12,27 +14,6 @@ li{
     justify-content: end;
     align-items: center;
     width: 100%;
-}
-
-.nav-item{
-    top: 0px;
-    width: 113px;
-    height: 80px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    opacity: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-item:hover, .active{
-    background: #5861AE 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-}
-
-.nav-item:hover .text, .active .text{
-    color: #FFFFFF;
 }
 
 .logo-container{
@@ -61,7 +42,7 @@ li{
     color: #565657;
     text-transform: capitalize;
     opacity: 1;
-    /* padding: 2.09rem 2rem 1.71rem 2.15rem; */
+    padding: 2.09rem 2rem 1.71rem 2.15rem;
 }
 
 .nav-user{
@@ -79,7 +60,7 @@ li{
     top: 1.18rem;
     width: 2.68rem;
     height: 2.68rem;
-    background: transparent url('../../../public/images/user.webp') 0% 0% no-repeat padding-box;
+    background: transparent url('../../public/images/user.webp') 0% 0% no-repeat padding-box;
     box-shadow: 0rem 0.18rem 0.37rem #00000029;
     opacity: 1;
     border-radius: 50%;

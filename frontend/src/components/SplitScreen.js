@@ -12,7 +12,7 @@ function SplitScreen({children, leftWidth, rightWidth}) {
     const [left, right] = children;
   return (
     <>
-        <Container>
+        <Container style={{height:'74vh'}}>
             <Panel flex={leftWidth}>
                 {left}
             </Panel>

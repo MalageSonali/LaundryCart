@@ -7,7 +7,7 @@ import SignupForm from '../components/SignupForm'
 
 function SignUp() {
   return (
-    <Layout>
+    <Layout title={"Sign Up - Laundry Cart"}>
       <SplitScreen leftWidth={1} rightWidth={3}>
           <Welcome>
               <CtaLogin/>
