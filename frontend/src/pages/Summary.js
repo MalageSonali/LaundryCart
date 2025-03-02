@@ -4,7 +4,9 @@ import Layout from '../components/layout/Layout'
 function Summary() {
   return (
     <Layout title={"Summary - Laundry Cart"}>
-      <h1>Summary</h1>
+      <div style={{height: "100vh"}}>
+        <h1>Summary</h1>
+      </div>
     </Layout>
   )
 }

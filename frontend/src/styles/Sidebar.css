@@ -11,8 +11,8 @@ li{
 .side-container{
     top: -1.5px;
     left: 0px;
-    width: 57px;
-    height: 933px;
+    width: 5vw;
+    height: 100vh;
     background: #5861AE 0% 0% no-repeat padding-box;
     opacity: 1;
     display: flex;
@@ -22,12 +22,14 @@ li{
 }
 
 .nav-home, .nav-more, .nav-list{
-    padding: 1rem;
+    width: 5vw;
+}
+
+.home-icon, .more-icon, .list-icon{
+    margin: 2vw;
 }
 
 .home-icon{
-    top: 119px;
-    left: 20px;
     width: 22px;
     height: 22px;
     background: transparent url('../../public/images/home-run\ \(1\).png') 0% 0% no-repeat padding-box;
@@ -35,8 +37,6 @@ li{
 }
 
 .more-icon{
-    top: 183px;
-    left: 20px;
     width: 22px;
     height: 22px;
     background: transparent url('../../public/images/more.png') 0% 0% no-repeat padding-box;
@@ -44,19 +44,17 @@ li{
 }
 
 .list-icon{
-    top: 247px;
-    left: 20px;
-    width: 25px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     background: transparent url('../../public/images/list.png') 0% 0% no-repeat padding-box;
     opacity: 1;
 }
-
-.nav-home:hover, .nav-more:hover, .nav-list:hover{
+/* 
+.nav-home:hover, .nav-more:hover, .nav-list:hover, .active{
     background-color: #FFFFFF;
-}
+} */
 
-.nav-home:hover .home-icon, .nav-more:hover .more-icon, .nav-list:hover .list-icon{
+/* .nav-home:hover .home-icon, .nav-more:hover .more-icon, .nav-list:hover .list-icon, .active{
     filter: drop-shadow(0px 300px 0 #5861AE);
     transform: translateY(-300px);
-}
+} */

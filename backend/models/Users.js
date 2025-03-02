@@ -36,6 +36,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String, 
         required: true
+    },
+    photo: {
+        data: Buffer,
+        contentType: String
     } 
 },
 {timestamps: true}

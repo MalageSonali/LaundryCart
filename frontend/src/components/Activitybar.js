@@ -1,7 +1,12 @@
 import React from "react";
 import '../styles/Activitybar.css';
+import { useNavigate } from "react-router-dom";
 
 function Activitybar(){
+    const navigate = useNavigate();
+    const goToOrders = () => {
+        navigate('/orders');
+    }
     return(
         <>
             <div className="container">
@@ -9,7 +14,7 @@ function Activitybar(){
                     <p>Orders | 0</p>
                 </div>
                 <div className="create-button">
-                    <button>Create</button>
+                    <button onClick={goToOrders}>Create</button>
                 </div>
                 <div className="searchbox">
                     <div className="search-icon">

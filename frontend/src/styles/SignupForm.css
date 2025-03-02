@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 10vh;
+    height: 9vh;
 }
 
 input[type="checkbox"]{
@@ -42,19 +42,29 @@ input:focus{
 
 input, select{
     border-bottom: 0.2vh solid #989898;
+    width: 29vw;
 }
 
-.input-field{
-    margin: 1vw;
+.input-field, .input-field-set div{
     padding: 0.5vw;
-    width: 20vw;
     flex: 50%;
+}
+
+.input-field-set div{
+    display: flex;
+    flex-direction: column;
+    height: 5vh;
+}
+
+.input-field-set{
+    margin-bottom: 2vh;
 }
 
 .terms-field{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 3vh;
 }
 
 .signup-btn{
@@ -73,13 +83,36 @@ input, select{
 .btn-field{
     display: flex;
     justify-content: center;
-    margin: 3vh;
 }
 
 .terms-text{
     text-decoration: underline;
     font: normal normal normal 1vw/2vh Open Sans;
     letter-spacing: 0.49px;
+    color: #5861AE;
+    opacity: 1;
+}
+
+.error-text{
+    text-align: left;
+    font: italic normal normal 1vw/2vh Open Sans;
+    letter-spacing: 0.42px;
+    color: #EF1A1A;
+    opacity: 1;
+}
+
+.error-text-terms{
+    text-align: right;
+    font: italic normal normal 1vw/2vh Open Sans;
+    letter-spacing: 0.42px;
+    color: #EF1A1A;
+    opacity: 1;
+}
+
+.floating-label{
+    text-align: left;
+    font: normal normal normal 12px/15px Open Sans;
+    /* letter-spacing: 0.42px; */
     color: #5861AE;
     opacity: 1;
 }

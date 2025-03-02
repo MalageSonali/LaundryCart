@@ -27,6 +27,7 @@
 
 input{
     text-align: left;
+    width: 40vw;
     font: normal normal normal 1.5vw/1.5vw Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
@@ -53,7 +54,7 @@ input{
     opacity: 1;
 }
 
-.signin-btn{
+.signin-btn, .logout-btn{
     width: 10.40vw;
     height: 8.5vh;
     background: #4552C1 0% 0% no-repeat padding-box;
@@ -67,3 +68,19 @@ input{
     margin-left: 15vw;
     margin-top: 5vw;
 }
+
+.errMsg{
+    text-align: right;
+    font: italic normal normal 12px/27px Open Sans;
+    letter-spacing: 0.42px;
+    color: #EF1A1A;
+    opacity: 1;
+}
+
+/* .error{
+    border-bottom: 0.2vw solid red;    
+}
+
+.error input{
+    color: red;
+} */

@@ -5,7 +5,9 @@ function Blogs() {
   return (
     <>
       <Layout title={"Blogs - Laundry Cart"}>
-        <h1>Blog</h1> 
+        <div style={{height: "100vh"}}>
+          <h1>Blog</h1>
+        </div>
       </Layout>
     </>
   )

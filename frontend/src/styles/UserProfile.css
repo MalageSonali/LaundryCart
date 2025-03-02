@@ -1,0 +1,15 @@
+.user-profile-data{
+    padding: 1vh;
+    margin: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sec1, .sec2{
+    flex: 1;
+}
+
+.user-data{
+    padding: 1vh;
+    margin: 1vh;
+}

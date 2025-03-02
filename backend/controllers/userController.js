@@ -92,6 +92,7 @@ const loginController = async (req, res) => {
             success: true,
             message: "Login Successful",
             user: {
+                _id: user._id,
                 name: user.name,
                 email: user.email,
                 phone: user.phone,
@@ -116,8 +117,28 @@ const testController = (req, res) => {
     });
 }
 
+const getUserDetailsController = async (req, res) => {
+    try {
+        // console.log("User ID from request:", req.user._id);
+        const userProfileDetails = await User.find({ _id: req.user._id });
+        console.log("user data from request:", userProfileDetails);
+        res.status(200).send({
+            success: true,
+            data: userProfileDetails
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error while getting orders",
+            error
+        });
+    }
+}
+
 module.exports = {
     registerController,
     loginController,
-    testController
+    testController,
+    getUserDetailsController
 }

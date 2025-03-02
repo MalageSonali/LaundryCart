@@ -1,11 +1,84 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/layout/Layout'
+import { useUser } from '../context/user';
+import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import '../styles/UserProfile.css';
 
 function UserProfile() {
+  const navigate = useNavigate();
+  const [user, setUser] = useUser();
+  const [userProfile, setUserProfile] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API}/api/v1/users`)
+      .then((response) => {
+        console.log("API Response:", response.data.data[0]);
+        setUserProfile(response.data.data[0]);
+      })
+      .catch((error) => {
+        console.error("Error fetching user details:", error);
+        toast.error("Error fetching user details");
+      });
+  }, []);
+
+  const handleLogout = () => {
+    setUser({
+      ...user,
+      currUser: null,
+      token: ""
+    })
+    localStorage.removeItem("currUser");
+    toast.success("Logout Successfully!");
+    navigate('/signin');
+  }
   return (
     <>
       <Layout title={"User Profile - Laundry Cart"}>
-        <h1>User Profile</h1>
+        <div style={{height: "100vh"}}>
+          <div className='user-profile-data'>
+            <div className='sec1'>
+              <div className='user-data'>
+                <h3>Name: </h3>
+                <h4>{userProfile.name}</h4>
+              </div>
+
+              <div className='user-data'>
+                <h3>Email: </h3>
+                <h4>{userProfile.email}</h4>
+              </div>
+
+              <div className='user-data'>
+                <h3>Phone: </h3>
+                <h4>{userProfile.phone}</h4>
+              </div>
+            </div>
+            <div className='sec2'>
+              <div className='user-data'>
+                <h3>Address: </h3>
+                <h4>{userProfile.address}</h4>
+              </div>
+
+              <div className='user-data'>
+                <h3>District: </h3>
+                <h4>{userProfile.district}</h4>
+              </div>
+
+              <div className='user-data'>
+                <h3>State: </h3>
+                <h4>{userProfile.state}</h4>
+              </div>
+
+              <div className='user-data'>
+                <h3>Pincode: </h3>
+                <h4>{userProfile.pincode}</h4>
+              </div>  
+            </div>
+          </div>
+          <button className='logout-btn' onClick={handleLogout}>Logout</button>      
+        </div>
       </Layout>
     </>
   )

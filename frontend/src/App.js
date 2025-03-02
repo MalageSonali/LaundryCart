@@ -10,21 +10,46 @@ import Career from './pages/Career';
 import UserProfile from './pages/UserProfile';
 import Home from './pages/Home';
 import Blogs from './pages/Blogs';
+// import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/Routes/ProtectedRoute';
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element = {<Home/>}/>
+
+        <Route path='/' element = {<ProtectedRoute/>}>
+          <Route path='' element = {<Home/>}/>
+        </Route>
+
+       {/* 
+          <Route path='/dashboard' element = {<ProtectedRoute/>}>
+            <Route path='' element = {<Dashboard/>}/>
+          </Route>
+       */} 
+
+        <Route path='/orders' element = {<ProtectedRoute/>}>
+          <Route path='' element = {<Orders/>}/>
+        </Route>
+
+        <Route path='/summary' element = {<ProtectedRoute/>}>
+          <Route path='' element = {<Summary/>}/>
+        </Route>
+
+        <Route path='/past-orders' element = {<ProtectedRoute/>}>
+          <Route path='' element = {<PastOrders/>}/>
+        </Route>
+
+        <Route path='/user-profile' element = {<ProtectedRoute/>}>
+          <Route path='' element = {<UserProfile/>} />
+        </Route>
+        
         <Route path='/signin' element = {<SignIn/>}/>
         <Route path='/signup' element = {<SignUp/>}/>
-        <Route path='/orders' element = {<Orders/>}/>
-        <Route path='/summary' element = {<Summary/>}/>
-        <Route path='/past-orders' element = {<PastOrders/>}/>
-        <Route path='*' element = {<PageNotFound/>}/>
         <Route path='/pricing' element = {<Pricing />} />
         <Route path='/career' element = {<Career/>} />
-        <Route path='/user-profile' element = {<UserProfile/>} />
         <Route path='/blogs' element = {<Blogs/>}/>
+        <Route path='*' element = {<PageNotFound/>}/>
+
       </Routes>
     </>
   );

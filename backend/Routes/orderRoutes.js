@@ -2,17 +2,13 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const {body, validationResult} = require("express-validator");
 const Order = require("../models/Orders");
+const requireSignIn = require("../middlewares/userMiddleware");
+const { getOrdersController } = require('../controllers/orderController');
 
 const router = express.Router();
 router.use(bodyparser.json());
 
-router.get("/", async(req, res) => {
-    const data = await Order.find();
-    res.json({
-        status: "Success",
-        data
-    })
-})
+router.get("/", requireSignIn, getOrdersController)
 
 router.post("/add", 
     body("order_id").notEmpty(), 
