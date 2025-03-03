@@ -10,6 +10,7 @@ function UserProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useUser();
   const [userProfile, setUserProfile] = useState({});
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     axios
@@ -34,6 +35,22 @@ function UserProfile() {
     toast.success("Logout Successfully!");
     navigate('/signin');
   }
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
+      if (data?.success) {
+          toast.error(data?.message);
+      } else {
+          toast.success("Profile Photo Updated Successfully");        
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("something went wrong");
+    }
+};
+
   return (
     <>
       <Layout title={"User Profile - Laundry Cart"}>
@@ -77,8 +94,23 @@ function UserProfile() {
               </div>  
             </div>
           </div>
+          <div>
+            {photo ? photo.name : "Upload Photo"}
+            <input
+              type="file"
+              name="photo"
+              accept="image/*"
+              onChange={(e) => setPhoto(e.target.files[0])}
+            />
+            <button className="update-btn" onClick={handleUpdate}>
+                UPLOAD PHOTO
+            </button>
+          </div>
+
           <button className='logout-btn' onClick={handleLogout}>Logout</button>      
+        
         </div>
+      
       </Layout>
     </>
   )

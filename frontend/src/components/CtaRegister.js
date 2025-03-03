@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../../styles/CtaRegister.css';
 import '../styles/CtaRegister.css';
 import { useNavigate } from 'react-router-dom';
 

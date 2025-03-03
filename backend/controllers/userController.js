@@ -1,7 +1,7 @@
 const { hashPassword, comparePassword } = require("../helpers/userHelper");
 const User = require("../models/Users");
-// const {body, validationResult} = require("express-validator");
 const jwt = require("jsonwebtoken");
+const fs = require('fs');
 
 const registerController = async (req, res) => {
     try {
@@ -119,9 +119,7 @@ const testController = (req, res) => {
 
 const getUserDetailsController = async (req, res) => {
     try {
-        // console.log("User ID from request:", req.user._id);
         const userProfileDetails = await User.find({ _id: req.user._id });
-        console.log("user data from request:", userProfileDetails);
         res.status(200).send({
             success: true,
             data: userProfileDetails
@@ -130,7 +128,45 @@ const getUserDetailsController = async (req, res) => {
         console.log(error);
         res.status(500).send({
             success: false,
-            message: "Error while getting orders",
+            message: "Error while getting user details",
+            error
+        });
+    }
+}
+
+// Not working
+const updateUserController = async (req, res) => {
+    try {
+        const {photo} = req.files;
+        if(photo && photo.size > 1000000){
+            return res.status(500).send({ 
+                error: "photo is Required and should be less then 1mb" 
+            });
+        }
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+                
+            }
+        )
+        if (photo) {
+            user.photo.data = fs.readFileSync(photo.path);
+            user.photo.contentType = photo.type;
+        }
+
+        await user.save();
+
+        res.status(201).send({
+            success: true,
+            message: "Profile Updated Successfully",
+            products,
+        });
+            
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error while updating user details",
             error
         });
     }
@@ -140,5 +176,6 @@ module.exports = {
     registerController,
     loginController,
     testController,
-    getUserDetailsController
+    getUserDetailsController,
+    updateUserController
 }

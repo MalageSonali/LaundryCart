@@ -5,14 +5,15 @@ import Sidebar from '../components/Sidebar';
 import Welcome from '../components/Welcome';
 
 function Home() {
+  
   const [user, setUser] = useUser();
+  
   return (
     <>
         <Layout title={"Home - Laundry Cart"}>
-          <Sidebar/>
+            <Sidebar/>
             <div style={{height: "100vh", color: "#5861AE"}}>
-            {/* <pre>{JSON.stringify(user, null, 4)}</pre> */}
-            <Welcome/>
+                <Welcome/>
             </div>
         </Layout> 
     </>

@@ -1,6 +1,5 @@
 import React from "react";
-import Activitybar from './Activitybar';
-import OrdersDetails from "./OrderDetails";
+import OrdersDetails from "./OrdersDetails";
 import Sidebar from './Sidebar';
 
 function Main(){
@@ -8,7 +7,6 @@ function Main(){
         <>
             <div style={{minHeight: "75vh"}}>
                 <Sidebar/>
-                <Activitybar/>
                 <OrdersDetails/>
             </div>
         </>

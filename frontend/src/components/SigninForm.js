@@ -20,16 +20,6 @@ function SigninForm() {
   const handleSignin = async (e) => {
     e.preventDefault();
     try{
-      //validation
-      /*
-      const phoneRegex = /^[0-9]{10}$/;
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if(!phoneRegex.test(credential)){
-        setError("Please enter a valid phone number");
-      }else if(!emailRegex.test(credential)){
-        setError("Please enter a valid Email");
-      }
-    */
         const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/users/login`, {credential, password});
         if(res && res.data.success){
           toast.success(res.data && res.data.message);
