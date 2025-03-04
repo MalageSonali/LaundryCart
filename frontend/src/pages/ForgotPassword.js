@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import Layout from '../components/layout/Layout';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -46,8 +45,7 @@ const ForgotPassword = () => {
 
   return (
     <>
-         {/* <Layout> */}
-            <div className='signin-form-container' style={{margin: "0 29vw 0 29vw"}}>
+        <div className='signin-form-container' style={{margin: "0 29vw 0 29vw"}}>
             <p className='signin-text'>FORGOT PASSWORD</p>
             <form onSubmit={handleSubmit}>
 
@@ -63,7 +61,6 @@ const ForgotPassword = () => {
                 
             </form>
         </div>
-         {/* </Layout> */}
     </>
   )
 }
