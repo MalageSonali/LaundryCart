@@ -2,6 +2,7 @@ const { hashPassword, comparePassword } = require("../helpers/userHelper");
 const User = require("../models/Users");
 const jwt = require("jsonwebtoken");
 const fs = require('fs');
+const nodemailer = require('nodemailer');
 
 const registerController = async (req, res) => {
     try {
@@ -135,7 +136,7 @@ const getUserDetailsController = async (req, res) => {
 }
 
 // Not working
-const updateUserController = async (req, res) => {
+const updateUserPhotoController = async (req, res) => {
     try {
         const {photo} = req.files;
         if(photo && photo.size > 1000000){
@@ -172,10 +173,72 @@ const updateUserController = async (req, res) => {
     }
 }
 
+const sendRecoveryEmailController = async (req, res) => {
+    try {
+        const { email} = req.body;
+        const user = await User.findOne({email});
+        if(user){
+
+            //Node Mailer to send mail Functionality not available
+
+            /*
+            var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                  user: process.env.MY_EMAIL,
+                  pass: process.env.MY_PASSWORD
+                }
+              });
+              
+              var mailOptions = {
+                from: process.env.MY_EMAIL,
+                to: email,
+                subject: 'OTP for Password Reset',
+                text: `Here is your OTP: ${OTP}`
+              };
+              
+              transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                  console.log(error);
+                  return res.status(500).send({
+                    success: false,
+                    message: "Could not send Email"
+                  })
+                } else {
+                  console.log('Email sent: ' + info.response);
+                  return res.status(200).send({
+                    success: true,
+                    message: "Email sent successfully"
+                  })
+                }
+              });
+            */
+
+            return res.status(200).send({
+                success: true,
+                message: "Feature is not available yet",
+            });
+            
+        }else{
+            return res.status(404).send({
+                success: false,
+                message: "User not found"
+            });
+        }
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error in updating Password"
+        })
+    }
+}
+
 module.exports = {
     registerController,
     loginController,
     testController,
     getUserDetailsController,
-    updateUserController
+    updateUserPhotoController,
+    sendRecoveryEmailController
 }

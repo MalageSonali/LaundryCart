@@ -1,5 +1,5 @@
 const express = require("express");
-const {registerController, loginController, testController, getUserDetailsController, updateUserController} = require("../controllers/userController");
+const {registerController, loginController, testController, getUserDetailsController, updateUserPhotoController, sendRecoveryEmailController} = require("../controllers/userController");
 const requireSignIn = require("../middlewares/userMiddleware");
 const formidable = require('express-formidable');
 
@@ -13,10 +13,14 @@ router.get('/test', requireSignIn, testController);
 
 router.get('/', requireSignIn, getUserDetailsController);
 
-router.put('/update:id', requireSignIn, formidable(), updateUserController)
+router.put('/update:id', requireSignIn, formidable(), updateUserPhotoController)
+
+router.post('/send-recovery-email', sendRecoveryEmailController);
 
 router.get('/auth-user', requireSignIn, (req, res) => {
     res.status(200).send({ok:true});
 })
+
+
 
 module.exports = router;

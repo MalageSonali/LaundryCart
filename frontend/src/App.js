@@ -10,6 +10,7 @@ import UserProfile from './pages/UserProfile';
 import Home from './pages/Home';
 import Blogs from './pages/Blogs';
 import ProtectedRoute from './components/Routes/ProtectedRoute';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path='/pricing' element = {<Pricing />} />
         <Route path='/career' element = {<Career/>} />
         <Route path='/blogs' element = {<Blogs/>}/>
+        <Route path='/forgotpassword' element = {<ForgotPassword/>}/>
         <Route path='*' element = {<PageNotFound/>}/>
 
       </Routes>

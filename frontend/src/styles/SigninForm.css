@@ -15,19 +15,17 @@
     margin: 1rem;
 }
 
-.mobile-or-email-input, .password-input{
+.mobile-or-email-input, .password-field{
     border-bottom: 0.2vw solid #989898;
-    margin: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
 }
 
-.password-input{
-    display: flex;
-    flex-direction: row;
+.password-input, .mobile-or-email-input>input{
+    border: none;
 }
 
 input{
     text-align: left;
-    width: 40vw;
     font: normal normal normal 1.5vw/1.5vw Open Sans;
     letter-spacing: 0.6px;
     color: #77838F;
@@ -52,6 +50,7 @@ input{
     color: #4552C1;
     text-transform: capitalize;
     opacity: 1;
+    text-decoration: none;
 }
 
 .signin-btn, .logout-btn{
@@ -76,11 +75,18 @@ input{
     color: #EF1A1A;
     opacity: 1;
 }
-
-/* .error{
+/* 
+.error{
     border-bottom: 0.2vw solid red;    
-}
+} */
 
-.error input{
+/* .error input{
     color: red;
 } */
+
+.password-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
