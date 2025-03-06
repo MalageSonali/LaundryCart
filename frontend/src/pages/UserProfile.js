@@ -18,6 +18,8 @@ function UserProfile() {
       .then((response) => {
         console.log("API Response:", response.data.data[0]);
         setUserProfile(response.data.data[0]);
+        //Testing
+        console.log("After fetching data: ",userProfile);
       })
       .catch((error) => {
         console.error("Error fetching user details:", error);
@@ -39,9 +41,10 @@ function UserProfile() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const { data } = axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
-      if (data?.success) {
-          toast.error(data?.message);
+      const  data  = axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
+      console.log("data received while updating photo: ", data);
+      if (!data.success) {
+          toast.error(data.message);
       } else {
           toast.success("Profile Photo Updated Successfully");        
       }
@@ -95,7 +98,7 @@ function UserProfile() {
             </div>
           </div>
           <div>
-            {photo ? photo.name : "Upload Photo"}
+            {/* {photo ? photo.name : "Upload Photo"} */}
             <input
               type="file"
               name="photo"

@@ -5,7 +5,8 @@ import { useUser } from '../../context/user';
 
 function Header() {
     const [user, setUser] = useUser();
-  return (
+
+    return (
     <>
         <nav>
             <ul className='nav-container'>
@@ -53,7 +54,15 @@ function Header() {
                                 <NavLink to="/user-profile" className="user">
                                     <ul  className='nav-user'>
                                         <li>
-                                            <div className='user-photo'></div>
+                                            <div className='user-photo'>
+                                                
+                                                {user.currUser.photo ? (
+                                                    <img src={user.currUser.photo} alt="Profile" />
+                                                ) : (
+                                                    <img src='../../public/images/user.webp' alt="Profile" />
+                                                )}
+                                            
+                                            </div>
                                         </li>
                                         <li>
                                             <div className='user-name'>

@@ -97,7 +97,8 @@ const loginController = async (req, res) => {
                 name: user.name,
                 email: user.email,
                 phone: user.phone,
-                address: user.address
+                address: user.address,
+                photo: user.photo
             },
             token
         });
@@ -135,9 +136,10 @@ const getUserDetailsController = async (req, res) => {
     }
 }
 
-// Not working
+//not working
 const updateUserPhotoController = async (req, res) => {
     try {
+                
         const {photo} = req.files;
         if(photo && photo.size > 1000000){
             return res.status(500).send({ 
@@ -147,8 +149,9 @@ const updateUserPhotoController = async (req, res) => {
         const user = await User.findByIdAndUpdate(
             req.params.id,
             {
-                
-            }
+                 
+            },
+            {new: true}
         )
         if (photo) {
             user.photo.data = fs.readFileSync(photo.path);
@@ -162,6 +165,7 @@ const updateUserPhotoController = async (req, res) => {
             message: "Profile Updated Successfully",
             products,
         });
+        
             
     } catch (error) {
         console.log(error);
@@ -240,5 +244,5 @@ module.exports = {
     testController,
     getUserDetailsController,
     updateUserPhotoController,
-    sendRecoveryEmailController
+    sendRecoveryEmailController,
 }
