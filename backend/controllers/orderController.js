@@ -20,11 +20,17 @@ const getOrdersController = async (req, res) => {
 
 const deleteOrdersController = async (req, res) => {
     try{
-            const delOrder = await Order.findByIdAndDelete(req.params.id);
+            const delOrder = await Order.findByIdAndUpdate(
+                req.params.id, 
+                {
+                    status: "Cancelled"
+                }, 
+                {new: true}
+            );
             if(delOrder){
                 res.status(200).send({
                     success: true,
-                    message: "Order Deleted successfully",
+                    message: "Order Cancelled successfully",
                 });
             }else{
                 res.status(404).send({

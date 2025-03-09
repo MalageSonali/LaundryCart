@@ -10,15 +10,15 @@ const PopupCancelOrder = (props) => {
 
     const deleteOrder = async (id) => {
 
-        const res = await axios.delete(`${process.env.REACT_APP_API}/api/v1/orders/delete/${id}`);
+        const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/orders/delete/${id}`);
         console.log("Response while deleting order: ", res);
         
         if(res.data.success){
             toast.success(res.data.message);
-            navigate('/past-orders');
+            navigate(0);
         }else{
             toast.error(res.data.message);
-            navigate('/past-orders');
+            navigate(0);
         }
     }
 

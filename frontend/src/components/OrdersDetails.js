@@ -91,9 +91,17 @@ function OrdersDetails(){
                                 <td className="table-item">{order.store_phone}</td>
                                 <td className="table-item">{order.total_item}</td>
                                 <td className="table-item" style={{color: "#5861AE"}}>{order.price}</td>
-                                <td className="table-item">{order.status}</td>
+                                <td className="table-item" 
+                                    style={order.status === "Cancelled" ? {color: "red"} : {}}
+                                >{order.status}</td>
                                 <td className="table-item action">
-                                    <PopupCancelOrder order = {order}/>
+                                    {
+                                        order.status === "Cancelled" ? (
+                                            <></>
+                                        ) : (
+                                            <PopupCancelOrder order = {order}/>
+                                        ) 
+                                    }
                                 </td>
                                 <td className="table-item">
                                     {/* <PopupSummary/> */}

@@ -86,6 +86,7 @@ li{
     width: 2.68rem;
     height: 2.68rem;
     background: transparent url('../../public/images/user.webp') 0% 0% no-repeat padding-box;
+    background-size: cover;
     box-shadow: 0rem 0.18rem 0.37rem #00000029;
     opacity: 1;
     border-radius: 50%;

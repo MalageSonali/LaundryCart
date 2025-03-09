@@ -8,6 +8,7 @@ function Header() {
 
     return (
     <>
+        {console.log("current user: ", user.currUser)}
         <nav>
             <ul className='nav-container'>
                 <NavLink to="/">
@@ -55,13 +56,13 @@ function Header() {
                                     <ul  className='nav-user'>
                                         <li>
                                             <div className='user-photo'>
-                                                
+                                                {/*
                                                 {user.currUser.photo ? (
                                                     <img src={user.currUser.photo} alt="Profile" />
                                                 ) : (
                                                     <img src='../../public/images/user.webp' alt="Profile" />
                                                 )}
-                                            
+                                                */}
                                             </div>
                                         </li>
                                         <li>

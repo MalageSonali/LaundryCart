@@ -10,7 +10,7 @@ function UserProfile() {
   const navigate = useNavigate();
   const [user, setUser] = useUser();
   const [userProfile, setUserProfile] = useState({});
-  const [photo, setPhoto] = useState("");
+  const [photo, setPhoto] = useState();
 
   useEffect(() => {
     axios
@@ -41,10 +41,11 @@ function UserProfile() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const  data  = axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
+      const  data  = await axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
       console.log("data received while updating photo: ", data);
       if (!data.success) {
           toast.error(data.message);
+          // toast.error("Error updating Profile Photo");
       } else {
           toast.success("Profile Photo Updated Successfully");        
       }
@@ -104,6 +105,9 @@ function UserProfile() {
               name="photo"
               accept="image/*"
               onChange={(e) => setPhoto(e.target.files[0])}
+
+
+              
             />
             <button className="update-btn" onClick={handleUpdate}>
                 UPLOAD PHOTO

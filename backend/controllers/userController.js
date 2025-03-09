@@ -149,14 +149,17 @@ const updateUserPhotoController = async (req, res) => {
         const user = await User.findByIdAndUpdate(
             req.params.id,
             {
-                 
+                photo: fs.readFileSync(photo.path)  
             },
             {new: true}
         )
-        if (photo) {
-            user.photo.data = fs.readFileSync(photo.path);
-            user.photo.contentType = photo.type;
-        }
+
+        // const user = await User.find({_id: req.params.id});
+
+        // if (photo) {
+        //     user.photo.data = fs.readFileSync(photo.path);
+        //     user.photo.contentType = photo.type;
+        // }
 
         await user.save();
 

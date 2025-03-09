@@ -10,7 +10,9 @@ router.use(bodyparser.json());
 
 router.get("/", requireSignIn, getOrdersController)
 
-router.delete('/delete/:id', requireSignIn, deleteOrdersController);
+router.post('/delete/:id', requireSignIn, deleteOrdersController);
+
+
 
 router.post("/add", 
     body("order_id").notEmpty(), 
