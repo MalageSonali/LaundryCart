@@ -99,12 +99,12 @@ function OrdersDetails(){
                                         order.status === "Cancelled" ? (
                                             <></>
                                         ) : (
-                                            <PopupCancelOrder order = {order}/>
+                                            <PopupCancelOrder order = {order} styleClass = {"cancel-btn"}/>
                                         ) 
                                     }
                                 </td>
                                 <td className="table-item">
-                                    {/* <PopupSummary/> */}
+                                    <PopupSummary order = {order}/>
                                 </td>
                             </tr>
                         ))}

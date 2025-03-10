@@ -24,7 +24,8 @@ const PopupCancelOrder = (props) => {
 
   return (
     <div>
-      <Popup trigger={<button className="cancel-btn">Cancel Order</button>} modal nested >
+    {console.log("Order received in PopupCancelOrder:", props.order)}
+    <Popup trigger={<button className={props.styleClass}>Cancel Order</button>} modal nested >
         {
             close => (
                 <div className="modal-content">
@@ -33,7 +34,7 @@ const PopupCancelOrder = (props) => {
                         <button className="close-btn" onClick={()=>close()}>X</button>
                     </div>
                     <div className="modal-body">
-                        <img className="warning-icon" src='/images/warning.png' />
+                        <img className="warning-icon" src='/images/warning.png' alt='warning'/>
                         
                         <div className="warning-text">
                             <p>Are you sure want to cancel the oreder No: {props.order.order_id}</p>
