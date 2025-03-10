@@ -8,7 +8,7 @@ function Header() {
 
     return (
     <>
-        {console.log("current user: ", user.currUser)}
+        {/* {console.log("current user: ", user.currUser)} */}
         <nav>
             <ul className='nav-container'>
                 <NavLink to="/">

@@ -7,7 +7,7 @@ const requireSignIn = async (req, res, next) => {
         req.user = await User.findById(decode._id).select("-password");
         next();
     } catch (error) {
-        console.log(`Error in Middleware: ${error}`);
+        // console.log(`Error in Middleware: ${error}`);
     }
 }
 

@@ -256,6 +256,7 @@ tr td{
     background: #F4F9FF 0% 0% no-repeat padding-box;
     opacity: 1;
     border-bottom: 1px solid black;
+    margin: 2vh;
 }
 
 .store-item-header{
@@ -306,12 +307,12 @@ input[type="radio"]{
 
 .cancel-action{
     float:right;
-    /* width: 150px; */
     height: 42px;
     background: #F41313 0% 0% no-repeat padding-box;
     border-radius: 4px;
     opacity: 1;
     color: #FFFFFF;
+    margin: 2vh;
 }
 
 .cancel-btn-summary{
@@ -321,4 +322,8 @@ input[type="radio"]{
     border-radius: 4px;
     color: #FFFFFF;
     opacity: 1;
+}
+
+.order-details{
+    margin: 2vh;
 }

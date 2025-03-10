@@ -16,13 +16,13 @@ function UserProfile() {
     axios
       .get(`${process.env.REACT_APP_API}/api/v1/users`)
       .then((response) => {
-        console.log("API Response:", response.data.data[0]);
+        // console.log("API Response:", response.data.data[0]);
         setUserProfile(response.data.data[0]);
         //Testing
-        console.log("After fetching data: ",userProfile);
+        // console.log("After fetching data: ",userProfile);
       })
       .catch((error) => {
-        console.error("Error fetching user details:", error);
+        // console.error("Error fetching user details:", error);
         toast.error("Error fetching user details");
       });
   }, []);
@@ -42,7 +42,7 @@ function UserProfile() {
     e.preventDefault();
     try {
       const  data  = await axios.put(`${process.env.REACT_APP_API}/api/v1/users/update/${user.currUser._id}`, {photo});
-      console.log("data received while updating photo: ", data);
+      // console.log("data received while updating photo: ", data);
       if (!data.success) {
           toast.error(data.message);
           // toast.error("Error updating Profile Photo");
@@ -104,10 +104,7 @@ function UserProfile() {
               type="file"
               name="photo"
               accept="image/*"
-              onChange={(e) => setPhoto(e.target.files[0])}
-
-
-              
+              onChange={(e) => setPhoto(e.target.files[0])}          
             />
             <button className="update-btn" onClick={handleUpdate}>
                 UPLOAD PHOTO

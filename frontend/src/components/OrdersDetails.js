@@ -19,12 +19,12 @@ function OrdersDetails(){
         axios
           .get(`${process.env.REACT_APP_API}/api/v1/orders`)
           .then((response) => {
-            console.log("API Response:", response.data.data);
+            // console.log("API Response:", response.data.data);
             setOrders(response.data.data);
             setOrdersData(response.data.data);
           })
           .catch((error) => {
-            console.error("Error fetching orders:", error);
+            // console.error("Error fetching orders:", error);
             toast.error("Error fetching orders");
           });
       }, []);
@@ -93,7 +93,9 @@ function OrdersDetails(){
                                 <td className="table-item" style={{color: "#5861AE"}}>{order.price}</td>
                                 <td className="table-item" 
                                     style={order.status === "Cancelled" ? {color: "red"} : {}}
-                                >{order.status}</td>
+                                >
+                                    {order.status}
+                                </td>
                                 <td className="table-item action">
                                     {
                                         order.status === "Cancelled" ? (

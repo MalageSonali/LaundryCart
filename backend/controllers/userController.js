@@ -51,7 +51,7 @@ const registerController = async (req, res) => {
 
 
     } catch (error) {
-        console.log(`Error in Registration: ${error}`);
+        // console.log(`Error in Registration: ${error}`);
         res.status(500).send({
             success: false,
             message: "Error in Registration",
@@ -103,7 +103,7 @@ const loginController = async (req, res) => {
             token
         });
     }catch(error){
-        console.log(`Error in login: ${error}`);
+        // console.log(`Error in login: ${error}`);
         res.status(500).send({
             success: false,
             message: "Error in login",
@@ -171,7 +171,7 @@ const updateUserPhotoController = async (req, res) => {
         
             
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).send({
             success: false,
             message: "Error while updating user details",
@@ -233,7 +233,7 @@ const sendRecoveryEmailController = async (req, res) => {
             });
         }
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).send({
             success: false,
             message: "Error in updating Password"

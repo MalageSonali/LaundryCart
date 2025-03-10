@@ -9,6 +9,7 @@ const PopupSummary = (props) => {
   return (
     
     <Popup 
+        debug={true}
         trigger={<button className="view-btn">
           <img className="view-icon" src='/images/view.png' alt='view'/>
         </button>
@@ -131,7 +132,7 @@ const PopupSummary = (props) => {
                   </div>
                 </div>
                 <div className='cancel-action'>
-                  {console.log("Order in parent component:", props.order)}
+                  {/* {console.log("Order in parent component:", props.order)} */}
                   <PopupCancelOrder order = {props.order} styleClass = {"cancel-btn-summary"} />
                 </div>
             </div>

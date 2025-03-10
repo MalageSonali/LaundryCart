@@ -9,7 +9,7 @@ const getOrdersController = async (req, res) => {
             data: orders
         })
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         res.status(500).send({
             success: false,
             message: "Error while getting orders",
@@ -39,7 +39,7 @@ const deleteOrdersController = async (req, res) => {
                 })
             }
     }catch(error){
-        console.log(error);
+        // console.log(error);
         res.status(500).send({
             success: false,
             message: "Error while deleting orders",
@@ -48,7 +48,23 @@ const deleteOrdersController = async (req, res) => {
     }
 }
 
+const addOrderController = async (req, res) => {
+    try {
+        const result = await Order.create(req.body);
+        res.json({
+            status:"Success",
+            result
+        });
+    } catch (error) {
+        res.status(400).json({ 
+            status : "Failed",
+            error: error.message 
+        });
+    }
+}
+
 module.exports = {
     getOrdersController,
-    deleteOrdersController
+    deleteOrdersController,
+    addOrderController
 }

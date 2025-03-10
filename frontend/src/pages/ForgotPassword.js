@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     const handleSubmit = async () => {
         try {
             const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/users/send-recovery-email`, {email});           
-            console.log("response of update password: ", res);
+            // console.log("response of update password: ", res);
             if(res && res.data.success){
                 toast.success(res.data.message);
                 navigate('/signin');
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
                 toast.error(res.data.message);
             }    
         } catch (error) {
-            console.error("Error response:", error.response); 
+            // console.error("Error response:", error.response); 
             toast.error(error.response?.data?.message || "Something went wrong");
         }
         

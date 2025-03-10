@@ -52,7 +52,7 @@ function SigninForm() {
         }
       
     }catch{
-      console.log("Something went wrong");
+      // console.log("Something went wrong");
       toast.error("Something went Wrong");
     }
   }

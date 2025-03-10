@@ -100,11 +100,11 @@ function SignupForm() {
                 toast.success(res.data && res.data.message)
                 navigate('/signin');
             }else{
-                console.log(res.data.message);
+                // console.log(res.data.message);
                 toast.error(res.data.message);
             }
         }catch{
-            console.log("Something went wrong");
+            // console.log("Something went wrong");
             toast.error("Something went wrong. Please try again.")
         }
     }
@@ -133,12 +133,12 @@ function SignupForm() {
                 </div>
                 <div className='input-field-set'>
                     <div>
-                    {phone && <label className="floating-label">Phone</label>}
+                        {phone && <label className="floating-label">Phone</label>}
                         <input type="number" name="phone" className='input-field' value={phone} onChange={(e) => setPhone(e.target.value)} placeholder='Phone' required />    
                         {errors.phone && <p className="error-text">{errors.phone}</p>}
                     </div>
                     <div>
-                    {state && <label className="floating-label">State</label>}
+                        {state && <label className="floating-label">State</label>}
                         <select name='state' className='input-field' value={state} onChange={changeState} placeholder='State' required>
                             <option value="">State</option>
                             {stateData.states.map( st => 
@@ -150,7 +150,7 @@ function SignupForm() {
                 </div>
                 <div className='input-field-set'>
                     <div>
-                    {district && <label className="floating-label">District</label>}
+                        {district && <label className="floating-label">District</label>}
                         <select name="district" className='input-field' value={district} onChange={(e) => setDistrict(e.target.value)} placeholder='District' required>
                             <option value="">District</option>
                             {districtsList.map(ds => 
@@ -160,26 +160,26 @@ function SignupForm() {
                         {errors.district && <p className="error-text">{errors.district}</p>}
                     </div>
                     <div>
-                    {address && <label className="floating-label">Address</label>}
+                        {address && <label className="floating-label">Address</label>}
                         <input type="text" name='address' className='input-field' value={address} onChange={(e) => setAddress(e.target.value)} placeholder='Address' required />
                         {errors.address && <p className="error-text">{errors.address}</p>}
                     </div>
                 </div>
                 <div className='input-field-set'>
                     <div>
-                    {pincode && <label className="floating-label">Pincode</label>}
+                        {pincode && <label className="floating-label">Pincode</label>}
                         <input type="number" name="pincode" className='input-field' value={pincode} onChange={(e) => setPincode(e.target.value)} placeholder='Pincode' required />    
                         {errors.pincode && <p className="error-text">{errors.pincode}</p>}
                     </div>
                     <div>
-                    {password && <label className="floating-label">Password</label>}
+                        {password && <label className="floating-label">Password</label>}
                         <input type="password" name="password" className='input-field' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' required />    
                         {errors.password && <p className="error-text">{errors.password}</p>}
                     </div>
                 </div>
                 <div className='input-field-set'>
                     <div>
-                    {confirmPassword && <label className="floating-label">Confirm Password</label>}
+                        {confirmPassword && <label className="floating-label">Confirm Password</label>}
                         <input type="password" name="confirm-password" className='input-field' value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} placeholder='Confirm Password' required />
                         {errors.confirmPassword && <p className="error-text">{errors.confirmPassword}</p>}
                     </div>
