@@ -29,17 +29,17 @@ const PopupCancelOrder = (props) => {
         {
             close => (
                 <div className="modal-content">
-                    <div className="modal-header">
-                        <p className="close-text">Alert</p>
-                        <button className="close-btn" onClick={()=>close()}>X</button>
+                    <div className="modal-header-cancel-order">
+                        <p className="close-text-cancel-order">Alert</p>
+                        <button className="close-btn-cancel-order" onClick={()=>close()}>X</button>
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body-cancel-order">
                         <img className="warning-icon" src='/images/warning.png' alt='warning'/>
                         
-                        <div className="warning-text">
+                        <div className="warning-text-cancel-order">
                             <p>Are you sure want to cancel the oreder No: {props.order.order_id}</p>
                             <button 
-                                className="proceed-btn" 
+                                className="proceed-btn-cancel-order" 
                                 onMouseDown={(e) => e.stopPropagation()}
                                 onClick={() =>{ 
                                     // console.log("Delete button clicked in PopupCancelOrder, order ID: ", props.order._id); 

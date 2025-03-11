@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Data from "../Data/data.json";
+import Data from '../data/data.json';
 import "./SummaryPage.css";
 
 const SummaryPage = ({ closeOverlay }) => {
@@ -67,11 +67,11 @@ const SummaryPage = ({ closeOverlay }) => {
         </select>
 
         {selectedStore && (
-  <div className="store-details">
-    <p><strong>Store Address:</strong> {selectedStore.storeAddress} <strong>Phone:</strong> {selectedStore.storePhone ? selectedStore.storePhone : "Not Available"}</p>
-    {/* <p><strong>Phone:</strong> {selectedStore.storePhone ? selectedStore.storePhone : "Not Available"}</p> */}
-  </div>
-)}
+      <div className="store-details">
+        <p><strong>Store Address:</strong> {selectedStore.storeAddress} <strong>Phone:</strong> {selectedStore.storePhone ? selectedStore.storePhone : "Not Available"}</p>
+        {/* <p><strong>Phone:</strong> {selectedStore.storePhone ? selectedStore.storePhone : "Not Available"}</p> */}
+      </div>
+        )}
 
       </div>
 

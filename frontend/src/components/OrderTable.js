@@ -213,6 +213,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SummaryPage from "../Summary/SummaryPage";
 import Popup from "reactjs-popup";
+import '../styles/table.css';
+import Layout from "./layout/Layout";
+import Sidebar from "./Sidebar";
+import { BsSearch } from 'react-icons/bs';
 
 const initialItems = [
   { id: 1, name: "Shirts", pricePerUnit: 20, image: "https://m.media-amazon.com/images/I/71I-cik1CyL._AC_UL1500_.jpg" },
@@ -298,25 +302,39 @@ const OrderTable = (order) => {
 
   return (
     <>
+    <Layout>
+      <Sidebar/>
+      <div className="container">
+                      <div className="info-text">
+                          <p>Create Order</p>
+                      </div>
+                      <div className="searchbox">
+                          <div className="search-icon">
+                          <BsSearch/>
+                          </div>
+                          <div className="search-text">
+                              <input type="text" name="search-text"/>           
+                          </div>
+                      </div>
+                  </div>
       <div className="order-container">
-        <h2>Create Order</h2>
-        <table>
+        <table className="OrderTable-table" style={{width:"100%", borderCollapse:"collapse"}}>
           <thead>
-            <tr>
-              <th>Product Types</th>
-              <th>Quantity</th>
-              <th>Wash Type</th>
-              <th>Price</th>
+            <tr className="OrderTable-table-row">
+              <th className="OrderTable-table-heading">Product Types</th>
+              <th className="OrderTable-table-heading">Quantity</th>
+              <th className="OrderTable-table-heading">Wash Type</th>
+              <th className="OrderTable-table-heading">Price</th>
             </tr>
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id}>
-                <td>
+              <tr key={item.id} className="OrderTable-table-row">
+                <td className="OrderTable-table-data">
                   <img src={item.image} alt={item.name} className="item-img" />
                   <span>{item.name}</span>
                 </td>
-                <td>
+                <td className="OrderTable-table-data">
                   <input
                     type="number"
                     min="0"
@@ -324,9 +342,10 @@ const OrderTable = (order) => {
                     onChange={(e) =>
                       handleQuantityChange(item.id, parseInt(e.target.value) || 0)
                     }
+                    className="quantity-input"
                   />
                 </td>
-                <td>
+                <td className="OrderTable-table-data">
                   {washTypes.map((wash) => (
                     <button
                       key={wash.id}
@@ -339,7 +358,7 @@ const OrderTable = (order) => {
                     </button>
                   ))}
                 </td>
-                <td className="price">{calculatePrice(item)}</td>
+                <td className="price OrderTable-table-data">{calculatePrice(item)}</td>
               </tr>
             ))}
           </tbody>
@@ -356,6 +375,7 @@ const OrderTable = (order) => {
   </Popup>
         </div>
       </div>
+      </Layout>
     </>
   );
 };

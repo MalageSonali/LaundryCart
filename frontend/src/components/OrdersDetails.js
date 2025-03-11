@@ -66,19 +66,19 @@ function OrdersDetails(){
                 </div>
             </div>
             <div className="table-container">
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
-                            <th><p>Order id</p></th>
-                            <th><p>Order Date & Time</p></th>
-                            <th><p>Store Location</p></th>
-                            <th><p>City</p></th>
-                            <th><p>Store Phone</p></th>
-                            <th><p>Total Items</p></th>
-                            <th><p>Price</p></th>
-                            <th><p>Status</p></th>
-                            <th><p></p></th>
-                            <th><p>View</p></th>
+                            <th className="th"><p className="p">Order id</p></th>
+                            <th className="th"><p className="p">Order Date & Time</p></th>
+                            <th className="th"><p className="p">Store Location</p></th>
+                            <th className="th"><p className="p">City</p></th>
+                            <th className="th"><p className="p">Store Phone</p></th>
+                            <th className="th"><p className="p">Total Items</p></th>
+                            <th className="th"><p className="p">Price</p></th>
+                            <th className="th"><p className="p">Status</p></th>
+                            <th className="th"><p className="p"></p></th>
+                            <th className="th"><p className="p">View</p></th>
                         </tr>
                     </thead>
                     <tbody>

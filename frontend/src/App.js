@@ -14,12 +14,9 @@ import ForgotPassword from './pages/ForgotPassword';
 
 import React from "react";
 import LaundryDashboard from './components/laundryDash';
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar.js";
 import OrderTable from "./components/OrderTable";
 import SummaryPage from "./Summary/SummaryPage.js";
 import Successful from "./Summary/Successful.js";
-import Footer  from "./components/Footer.js";
 import OrderPage from "./Summary/OrderPage";
 import ConfirmOrder from "./Summary/ConfirmOrder";
 import "./App.css"; 
@@ -29,8 +26,6 @@ function App() {
   return (
     <>
     <div className="flex flex-col h-screen">
-    <Navbar/>
-    <Sidebar/>
       <Routes>
 
         <Route path='/' element = {<ProtectedRoute/>}>
@@ -38,7 +33,11 @@ function App() {
         </Route>
 
         <Route path='/orders' element = {<ProtectedRoute/>}>
-          <Route path='' element = {<Orders/>}/>
+          <Route path='' element = {<LaundryDashboard />}/>
+        </Route>
+
+        <Route path='/order' element = {<ProtectedRoute/>}>
+            <Route path=""  element={<OrderTable/>}></Route>  
         </Route>
 
         <Route path='/past-orders' element = {<ProtectedRoute/>}>
@@ -57,10 +56,7 @@ function App() {
         <Route path='/forgotpassword' element = {<ForgotPassword/>}/>
         <Route path='*' element = {<PageNotFound/>}/>
 
-
-
-        <Route path="/" element={<LaundryDashboard />}></Route>
-        <Route path="/order"  element={<OrderTable/>}></Route>
+        
         <Route path="/summaryPage" element={<SummaryPage/>}></Route>
         <Route path="/successful" element={<Successful/>}></Route>
         {/* <Route path="/orderTable" element={<OrderTable/>}></Route> */}
@@ -71,7 +67,6 @@ function App() {
         
 
       </Routes>
-      <Footer/>
       </div>
     </>
   );

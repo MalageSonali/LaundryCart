@@ -64,7 +64,7 @@ function SigninForm() {
 
             {credential && <label className="floating-label" style={{marginLeft: "1.5vw"}}>Mobile / Email</label>}
             <div className={({error} ? 'mobile-or-email-input error' : 'mobile-or-email-input')}>
-                <input type="text" name="mobile-or-email" onChange={handleChange} placeholder='Mobile / Email' required />
+                <input type="text" name="mobile-or-email" onChange={handleChange} placeholder='Mobile / Email' required style={{width: "100%"}}/>
             </div>
             {error && <p className='errMsg' style={{color: "#EF1A1A"}}>{error}</p>}
                         

@@ -8,29 +8,34 @@
     margin: 2rem 2rem 0rem 6rem;
 }
 
-table{
-    border-collapse: collapse;
+.table{
+    border-collapse: collapse !important;
 }
 
-table th{
-    top: 172px;
-    left: 99px;
-    width: 1293px;
-    height: 35px; 
-    background: #383737 0% 0% no-repeat padding-box;
-    opacity: 1;
+.th{
+    top: 172px !important;
+    left: 99px !important;
+    width: 1293px !important;
+    height: 35px !important; 
+    background: #383737 0% 0% no-repeat padding-box !important;
+    opacity: 1 !important;
 }
 
-th p{
+.p{
+    text-align: left !important;
+    font: normal normal 600 12px/48px Open Sans !important;
+    letter-spacing: 0px !important;
+    color: #FFFFFF !important;
+    padding-left: 0.5rem !important;
+    opacity: 1 !important;
+}
+
+.table-item, .table-item-popup-summary{
     text-align: left;
-    font: normal normal 600 12px/48px Open Sans;
+    font: normal normal normal 12px/48px Open Sans;
     letter-spacing: 0px;
-    color: #FFFFFF;
-    padding-left: 0.5rem;
-    opacity: 1;
-}
-
-tr td{
+    color: #1E2022;
+    /* padding-left: 0.5rem; */
     top: 207px;
     left: 99px;
     width: 1293px;
@@ -38,15 +43,6 @@ tr td{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-bottom: 1px solid #EAEDF0;
     opacity: 1;
-}
-
-.table-item{
-    text-align: left;
-    font: normal normal normal 12px/48px Open Sans;
-    letter-spacing: 0px;
-    color: #1E2022;
-    opacity: 1;
-    /* padding-left: 0.5rem; */
 }
 
 .view-icon{
@@ -60,7 +56,7 @@ tr td{
 .action{
     color: red;
 }
-
+/**************************************** POPUP CANCEL ORDER ******************************************/
 .modal-content{
     width: 415px;
     height: 210px;
@@ -69,7 +65,7 @@ tr td{
     opacity: 1;
 }
 
-.modal-header{
+.modal-header-cancel-order{
     width: 415px;
     height: 43px;
     background: #5861AE 0% 0% no-repeat padding-box;
@@ -80,7 +76,7 @@ tr td{
     align-items: center;
 }
 
-.close-btn, .close-text{
+.close-btn-cancel-order, .close-text-cancel-order, .close-btn-popup-summary{
     background-color: #5861AE;
     color: #FFFFFF;
     width: 43px;
@@ -88,8 +84,9 @@ tr td{
     border:none;
 }
 
-.close-text{
+.close-text-cancel-order{
     flex:1;
+    padding: 10px;
 }
 
 .warning-icon{
@@ -98,11 +95,11 @@ tr td{
     margin: 60px;
 }
 
-.warning-text{
+.warning-text-cancel-order{
     flex: 1;
 }
 
-.modal-body{
+.modal-body-cancel-order{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -110,7 +107,7 @@ tr td{
     justify-content: center;
 }
 
-.proceed-btn{
+.proceed-btn-cancel-order{
     width: 107px;
     height: 32px;
     background: #5861AE 0% 0% no-repeat padding-box;
@@ -134,7 +131,8 @@ tr td{
     opacity: 1;
 }
 
-/* Activity bar */
+
+/**************************************** Activity bar *****************************************/
 
 *{
     padding:0;
@@ -221,7 +219,7 @@ tr td{
     height: auto !important;
 }
 
-.summary-container{
+.summary-container-popup-summary{
     position: fixed;
     top: 0;
     right: 0;
@@ -230,7 +228,7 @@ tr td{
     background-color: #FFFFFF;
 }
 
-.summary-header{
+.summary-header-popup-summary{
     height: 10vh;
     width: 100%;
     background: #5861AE;
@@ -240,7 +238,7 @@ tr td{
     padding: 10px 20px;
 }
 
-.summary-text{
+.summary-text-popup-summary{
     text-align: left;
     font: normal normal 600 22px/20px Open Sans;
     letter-spacing: 0px;
@@ -250,7 +248,7 @@ tr td{
     flex: 1;
 }
 
-.store-details{
+.store-details-popup-summary{
     display: flex;
     justify-content: space-around;
     background: #F4F9FF 0% 0% no-repeat padding-box;
@@ -259,7 +257,7 @@ tr td{
     margin: 2vh;
 }
 
-.store-item-header{
+.store-item-header-popup-summary{
     text-align: left;
     font: normal normal 600 16px/22px Open Sans;
     letter-spacing: 0.38px;
@@ -267,7 +265,7 @@ tr td{
     opacity: 1;
 }
 
-.store-item-text{
+.store-item-text-popup-summary{
     text-align: left;
     font: normal normal normal 16px/22px Open Sans;
     letter-spacing: 0.38px;
@@ -275,7 +273,7 @@ tr td{
     opacity: 1;
 }
 
-.order-status{
+.order-status-popup-summary{
     display: flex;
     justify-content: center;
     padding: 2vh;
@@ -290,13 +288,23 @@ input[type="radio"]{
 .custom-row>td{
     background-color: #5861AE; 
     color:#FFFFFF;
+    
 }
 
-.address{
+.table-popup-summary{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table-item-popup-summary{
+    text-align: center;
+}
+
+.address-popup-summary{
     margin: 2vw;
 }
 
-.address-box{
+.address-box-popup-summary{
     width: 200px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -305,7 +313,7 @@ input[type="radio"]{
     opacity: 1;
 }
 
-.cancel-action{
+.cancel-action-popup-summary{
     float:right;
     height: 42px;
     background: #F41313 0% 0% no-repeat padding-box;
